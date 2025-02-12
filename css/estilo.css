@@ -1,3 +1,6 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Domine:wght@400..700&family=Lexend:wght@100..900&family=Nothing+You+Could+Do&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Smooch+Sans:wght@100..900&family=Tangerine:wght@400;700&display=swap');
 
 :root {
     --cor_fundo_cabec: #A6323B;
@@ -15,6 +18,10 @@
     --cor_10: #dbd8d8;
     --cor_11: #d6d3d383;
     --cor_12: #232323ac;
+
+    --fonte_padrao: Verdana, Arial, Helvetica, sans-serif;
+    --fonte_destaque: 'Tangerine', serif;
+    --fonte_01: "Lexend", serif;
 }
 
 *{
@@ -22,10 +29,15 @@
     margin: 0;
 }
 
+body{
+    background-color: var(--cor_10)
+}
+
+/* Personalizando o Cabeçalho (Header) */
 .header{
-    background-color: rgb(176, 41, 41);
+    background-image: linear-gradient(to bottom, var(--cor_fundo_cabec), var(--cor_06));
     color: #fff;
-    height: 5em;
+    height: 4em;
     width: 100vw;
     display: flex;
     justify-content: center;
@@ -41,15 +53,16 @@
 }
 
 #nav-list{
-    display: none;
+    display: flex;
     flex-flow: row wrap;
     flex-grow: 1;
-    gap: 10px;
+    gap: 15px;
 }
 
 #nav-list li{
     list-style: none;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: "Smooch Sans", serif;
+    font-size: 2em;
 }
 
 #nav-list a{
@@ -60,10 +73,11 @@
 
 #nav-list a:hover{
     color: var(--cor_03);
+    padding: 0 5px;
 }
 
 .header i{
-    display: block;
+    display: none;
     color: #fff;
     font-size: 2em;
     padding: 0.1em;
