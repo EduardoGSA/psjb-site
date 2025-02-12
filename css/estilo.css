@@ -74,7 +74,6 @@ body{
 #nav-list a{
     color: #fff;
     text-decoration: none;
-    transition: 0.2s ease;
     padding: 1px 3px;
     font-weight: 400;
 }
@@ -173,3 +172,49 @@ body{
     background-image: linear-gradient(to right, var(--cor1), var(--cor2));
 }
 
+/* Configurando o main Home */
+.homemain-container{
+    display: flex;
+    flex-direction: row;
+    margin: 2em 4em;
+    background-image: 
+    linear-gradient(to right, var(--cor_fundo_rodap), var(--cor_08)),
+    url(../imagens/logo-psjb.png);
+    background-position: cover;
+    color: #fff;
+    border: 3px solid #fff;
+    border-radius: 5px;
+    padding: 2em;
+}
+
+.homemain-container::before{
+    content: "";
+    background-image: url(../imagens/logo-psjb.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    opacity: 0.1;
+    position: absolute;
+    left: 25%;
+    width: 50%;
+    height: 50%;
+    z-index: 1;
+}
+
+.homemain-container img{
+    width: 15em;
+
+}
+
+#homemain-text01 p{
+    padding: 1.5em 0.5em 0em 0em;
+}
+
+#homemain-text02{
+    text-align: right;
+    padding: 1.5em 1em 0em 0em;
+}
+
+span{
+    font-weight: 500;
+}
