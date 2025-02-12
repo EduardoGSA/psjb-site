@@ -59,6 +59,25 @@ html, body {
     max-width: 100vw;
 }
 
+/* Teste Menu */
+.hamburger{
+    border: none;
+    background: none;
+    border-top: 3px solid #fff;
+    cursor: pointer;
+    /* display: none; */
+}
+
+.hamburger::before,
+.hamburger::after{
+    content: " ";
+    display: block;
+    width: 30px;
+    height: 3px;
+    background: #fff;
+    margin-top: 5px;
+}
+
 /* Estilo do Cabeçalho */
 .header{
     position: sticky;
@@ -104,25 +123,7 @@ header .nav .nav-list{
     text-decoration: none;
 }
 
-.hamburger{
-    border: none;
-    background: none;
-    border-top: 3px solid #fff;
-    cursor: pointer;
-    display: none;
-    position: relative;
-    z-index: 1000;
-}
 
-.hamburger::before,
-.hamburger::after{
-    content: " ";
-    display: block;
-    width: 30px;
-    height: 3px;
-    background: #fff;
-    margin-top: 5px;
-}
 
 /* Responsividade do Menu */
 @media (max-width: 750px){
