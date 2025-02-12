@@ -15,7 +15,7 @@
     --cor_07: #ffffffc1;
     --cor_08: #043d6e;
     --cor-09: rgba(175, 172, 161, 0.644);
-    --cor_10: #dbd8d8;
+    --cor_10: #ede8d2;
     --cor_11: #d6d3d383;
     --cor_12: #232323ac;
 
@@ -27,10 +27,16 @@
 *{
     padding: 0;
     margin: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
 }
 
 body{
-    background-color: var(--cor_10)
+    background-color: var(--cor_10);
+    font-family: var(--fonte_01);
 }
 
 /* Personalizando o Cabeçalho (Header) */
@@ -44,12 +50,12 @@ body{
     align-items: center;
     padding: 0.5em;
     top: 0;
+    gap: 10px;
     position: fixed;
-    gap: 5px;
 }
 
 .header img{
-    height: 4em;
+    height: 3.7em;
 }
 
 #nav-list{
@@ -87,3 +93,78 @@ body{
     color: var(--cor_03);
     cursor: pointer;
 }
+
+/* Configurando a imagem principal da Home */
+.homeimg-container{
+    background-image: 
+    linear-gradient(to bottom, #000, transparent),
+    url(../imagens/psjb-igreja.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1em;
+}
+
+@keyframes animaInput{
+    0%{
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}
+
+.homeimg-img{
+    color: #fff;
+    text-align: center;
+    font-size: 1.2em;
+    animation: animaInput 2.5s;
+}
+
+.homeimg-img img{
+    width: 8em;
+}
+
+/* Configurando os contatos */
+.contatos-container{
+    display: block;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    animation: animaInput 3s linear;
+}
+
+.contatos{
+    display: flex;
+    margin-top: 1em;
+    flex-direction: row;
+    justify-content: center;
+    list-style: none;
+    gap: 10px;
+}
+
+.contatos li{
+    background-color: #ffffff90;
+    color: #504e4e;
+    padding: 5px;
+    border-radius: 10px;
+    transition: 0.2s ease-in;
+}
+
+.contatos li:hover{
+    color: #fff;
+}
+
+.contatos li:hover{
+    opacity: 1;
+    background-image: linear-gradient(to right, var(--cor1), var(--cor2));
+}
+
