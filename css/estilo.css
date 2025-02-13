@@ -257,19 +257,21 @@ span{
     color: var(--cor_03);
 }
 
+/* Rodapé */
 .footer{
     background-image: linear-gradient(to bottom, var(--cor_fundo_rodap), var(--cor_08));
-    padding: 3em;
+    padding: 1em 2em;
     color: #fff;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    text-align: center;
+    margin-top: 1em;
 }
 
 .footer-img-text{
     margin: 0 1em;
-    text-align: center;
     justify-content: center;
 }
 
@@ -278,12 +280,18 @@ span{
     flex-direction: column;
 }
 
-.social-media-rodape{
-    flex-direction: column;
+.footer-links a{
+    color: #fff;
+    padding: 0 5px;
+    font-size: 1.2em;
+}
+
+.footer-links a:hover{
+    color: #ffffff93;
 }
 
 .footer img{
-    width: 10em;
+    width: 12em;
 }
 
 .maps iframe{
