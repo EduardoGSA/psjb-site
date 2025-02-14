@@ -99,10 +99,6 @@ body{
     cursor: pointer;
 }
 /* Media query para Header */
-@media screen(max-width: ){
-    
-}
-
 
 /* Configurando a imagem principal da Home */
 .homeimg-container{
