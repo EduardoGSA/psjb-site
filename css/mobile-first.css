@@ -2,6 +2,14 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Domine:wght@400..700&family=Lexend:wght@100..900&family=Nothing+You+Could+Do&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Smooch+Sans:wght@100..900&family=Tangerine:wght@400;700&display=swap');
 
+
+/* Device Breakpoints 
+Móvel : até 576 pixels
+Tablet : 577–1024 pixels
+Área de trabalho : 1025–1440 pixels
+Área de trabalho grande : 1441 pixels e acima */
+
+
 :root {
     --cor_fundo_cabec: #A6323B;
     --cor_fundo_rodap: #02213b;
@@ -28,7 +36,6 @@
     margin: 0px;
     padding: 0px;
     font-family: var(--fonte_01);
-    font-size: 1.1em;
     box-sizing: border-box;
     scroll-behavior: smooth;
 
@@ -37,23 +44,23 @@
 }
 
 body, html{
-    width: 100vw;
+    width: 100%;
     height: 100vh;
 }
 
 
-/* main{
-    background-color: var(--cor_fundo);
-    width: 90vw;
+main{
+    background-color: #f5f1f1b2;
+    width: 100vw;
     margin: auto;
-    padding: 10px;
-} */
+    font-size: 1.5em;
+}
 
 img{
     margin: auto;
 }
 
-.header{
+.header nav{
     background-image: linear-gradient(var(--cor_fundo_cabec), var(--cor_06));
     color: #fff;
     display: flex;
@@ -65,6 +72,29 @@ img{
     gap: 10px;
     position: fixed;
     z-index: 3;
+}
+
+.header .navbar-brand img {
+    height: 50px; 
+    width: auto; 
+    max-width: 100%;
+}
+
+.offcanvas-header{background-color: var(--cor_06);}
+.offcanvas-body{
+    background-image: linear-gradient(to bottom, var(--cor_06), var(--cor_fundo_cabec));
+}
+
+.custom-toggler-icon{
+    width: 30px;
+    height: 3px;
+    background-color: #ffffff; 
+    display: block;
+    margin: 5px 0;
+}
+
+.nav-item a{
+    color: #fff;
 }
 
 .header i{
@@ -112,14 +142,33 @@ img{
 
 .header img{width: 3em;}
 
-/* @media screen and (max-width: 700px) {
-    #menu {
-        display: none;
+@media screen and (max-width: 700px) {
+    .bi-list {
+        display: block; /* Mostra o ícone em telas pequenas */
     }
-} */
 
+    #menu {
+        display: none; /* Oculta o menu em telas pequenas */
+        position: absolute;
+        top: 40px; /* Ajuste conforme a altura do header */
+        right: 0;
+        background-color: #333;
+        width: 100%;
+        text-align: center;
+    }
+
+    #nav-list {
+        flex-direction: column;
+    }
+
+    #nav-list li {
+        margin: 1em 0;
+    }
+}
+
+/* ------------------------------------------------- CSS - Home ----------------------------------------------------------- */
 /* Configurando a imagem principal da Home */
-.homeimg-container{
+.home-img-bg{
     background-image: 
     linear-gradient(to bottom, #000, transparent),
     url(../imagens/psjb-igreja.png);
@@ -128,12 +177,54 @@ img{
     background-repeat: no-repeat;
     background-attachment: fixed;
     height: 100vh;
-    width: 100vw;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 1em;
-    margin-top: 4em;
+    margin-top: 2em;
+}
+
+.home-img-text{
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+
+.home-img-text img{
+    width: 8em;
+}
+
+.titulo-pagina{
+    position: relative;
+    display: inline-block;
+    font-size: 1.8em;
+    padding-top: 2em;
+    padding-bottom: 10px;
+}
+
+.titulo-pagina::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 100%;
+    height: 8px;
+    background-color: #d14b56;
+    animation: textUnderline 1.5s linear;
+}
+
+@keyframes textUnderline{
+    0% {
+        left: 0;
+        width: 0;
+    }
+    50% {
+        width: 100%;
+    }
+    100% {
+        width: 100%;
+    }
 }
 
 .homeimg-img{
@@ -168,7 +259,7 @@ img{
     .contatos li {
         text-align: left;
         width: 95%;
-        font-size: 0.8em;
+        font-size: 0.7em;
         margin: 10px auto;
     }
 
@@ -211,3 +302,254 @@ img{
     opacity: 1;
     background-image: linear-gradient(to right, var(--cor1), var(--cor2));
 }
+
+/* Configurando o Banner do Padroeiro */
+.padroeiro-container{
+    padding: 1em;
+    margin: 2em 0;
+    font-size: 1em;
+    background-image: url(../imagens/img-saojoao-sf.png),
+    linear-gradient(to right, var(--cor_06), var(--cor_fundo_cabec));
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #fff;
+    background-blend-mode: overlay;
+}
+
+.padroeiro-container a{
+    color: var(--cor_03);
+}
+
+#assinatura-saojoao{
+    color: var(--cor_03);
+    font-family: "Nothing You Could Do", serif;
+    font-weight: 700;
+    text-align: right;
+    padding: 0.5em 0;
+}
+
+/* Organizando os contatos */
+.contatos-container{
+    background-color: #02213b;
+    color: #fff;
+    margin: 40px 0;
+    display: inline-block;
+    padding: 30px;
+    box-shadow: 10px 0px 10px #000000a0;
+}
+
+.contatos-container div{
+    margin: 15px 0;
+}
+
+.contatos-container h2{
+    margin-bottom: 20px;
+}
+
+.contatos-container a{
+    background-image: linear-gradient(var(--cor_06), var(--cor_fundo_cabec));
+    width: 100%;
+    padding: 10px;
+    margin: 15px 0;
+    color: white;
+    border-radius: 10px;
+}
+
+/* Configurando o Rodapé (Footer) */
+.footer{
+    background-image: linear-gradient(to bottom, var(--cor_fundo_rodap), var(--cor_08));
+    color: white;
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+    margin: 30px 0;
+}
+
+.footer-img {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 1em 0.5em;
+}
+
+.footer-img img{
+    width: 5em;
+}
+
+.social-media-rodape{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-text iframe{
+    width: 10em;
+    height: 10em;
+    border-radius: 10px;
+    margin: 0.5em 0;
+}
+
+.footer-links{
+    display: block;
+    text-align: center;
+}
+
+.footer-links a{
+    padding: 1em 5px;
+    color: #fff;
+}
+
+.footer-links p{
+    font-size: 15px;
+    margin: 1em 0;
+}
+
+/* Negrito */
+span{
+    font-weight: 800;
+}
+
+/* ----------------------------------------------- CSS - Paróquia ----------------------------------------------------------- */
+
+.historia-saojoao{
+    padding: 5px 15px;
+}
+
+.horario-missas-container,
+.secretaria-paroquia{
+    background-color: #ffffff;
+    box-shadow: 5px 5px 5px #0000004a;
+    border: 1px solid #000;
+    font-size: 20px;
+    margin: 1em 0.5em;
+}
+
+.horario-missas-container h2,
+.secretaria-paroquia h2{
+    background-color: var(--cor_06);
+    width: 100%;
+    color: #fff;
+    text-align: center;
+}
+
+.menu, .secretaria-paroquia ul,
+.secretaria-paroquia h3{
+    padding: 10px 5px;
+}
+
+.artigo-saojoao p,
+.artigo-saojoao h3{
+    margin: 20px 0px;
+}
+
+.artigo-saojoao img{
+    width: 100%;
+    margin: 0 5px;
+    margin: 0 auto;
+}
+
+/* ------------------------------------------------- CSS - Comunidade ------------------------------------------------------- */
+
+.historia-paroquia-box p,
+.historia-paroquia-box h3,
+.historia-paroquia-box h2{
+    margin: 15px 0;
+}
+
+.comunidade-container{
+    margin: 10px 20px;
+}
+
+/* Estilo do Carrosel */
+.logo-slider-container {
+    display: grid;
+    place-items: center;
+}
+
+.logo-slider{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    background-color: #000000f2;
+    box-shadow: 0 10px 10px #0000004b;
+    backdrop-filter: blur(7.4px);
+    -webkit-backdrop-filter: blur(7.4px);
+    border-top: 1px solid #e4e0e0;
+    border-bottom: 1px solid #e4e0e0;
+    margin: 20px 0;
+} 
+
+.logo-slider-items{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    animation: carrossel 20s linear infinite;
+}
+
+.logo-slider-items::after {
+    content: "";
+    display: flex;
+    gap: 25px;
+}
+
+@keyframes carrossel{
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.logo-slider-items img{
+    width: 4%;
+    margin: 20px;
+}
+
+/* Estilo das Pastorais */
+.pastorais-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 5px 15px;
+    font-size: 22px;
+}
+
+.pastorais-box li{
+    margin: 20px 0;
+}
+
+.pastorais-box h2{
+    text-align: center;
+}
+
+/* Testando... */
+.me-2{
+    height: 2.8em;
+    width: 3em;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+}
+
+.accordion{
+    width: 100%;
+    text-align: left;
+}
+
+.accordion-item h2{
+    text-align: left;
+}
+
+#carouselExampleCaptions{
+    margin: 1em 0;
+}
+
+.carousel-item img{
+    height: 20em;
+}
+
